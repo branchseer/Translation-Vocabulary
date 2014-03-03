@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translation>
+  <Title>Mantis shrimp see colors like no other creature</Title>
+  <URL>http://www.foxnews.com/science/2014/01/24/mantis-shrimp-sees-color-like-no-other/</URL>
+  <Author>Stephanie Pappas</Author>
+  <Translator>Xiang Zhang</Translator>
+  <Date>January 24, 2014</Date>
+  <TranslationUnit>
+    <Source xml:lang="en">The colorful mantis shrimp is known for powerful claws that can stun prey with 200 lbs. of force.</Source>
+    <Target xml:lang="cn">彩色的螳螂虾有力的螯据称可以对猎物夹出200磅的力量。</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">Now, new research finds that these aggressive crustaceans are weird in another way: They see color like no other animal on the planet.</Source>
+    <Target xml:lang="cn">现在，新的研究表明这种具有攻击性的甲壳纲动物在另一个方面也有奇特的表现：他们看到的色彩和这个星球上的其他动物看到的均不一样。</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">In fact, the 400-million-year-old visual system of the mantis shrimp works more like a satellite sensor than any other animal eye, said study researcher Justin Marshall, a neurobiologist at the University of Queensland in Australia.</Source>
+    <Target xml:lang="cn">澳大利亚昆士兰大学的神经生物学家Justin Marshall介绍：实际上，与其他动物的眼睛不同，螳螂虾具有的4亿年之久的视觉系统更像是卫星传感器。</Target>
+  </TranslationUnit>
+</Translation>

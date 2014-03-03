@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translation>
+  <Title>Where are you? Where are you? Where are you?</Title>
+  <URL>http://domain.com/i/am/here</URL>
+  <Author>I-AM-MAD</Author>
+  <Translator>I-AM-MAD-TOO</Translator>
+  <Date>January 24, 2014</Date>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+  <TranslationUnit>
+    <Source xml:lang="en">I am here.</Source>
+    <Target xml:lang="cn">我在这里。</Target>
+    <Target xml:lang="fr">Je suis ici.</Target>
+  </TranslationUnit>
+</Translation>

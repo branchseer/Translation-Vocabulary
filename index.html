@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8" />
+  <title>Translation View Demo</title>
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap-3.1.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="vendor/nprogress/nprogress.css">
+  <style type="text/css">
+    body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    
+    .navbar {
+      margin-bottom: 20px;
+    }
+
+    .textTransition
+    {
+      transition:         color 100ms, background-color 100ms;
+      -moz-transition:    color 100ms, background-color 100ms;
+      -webkit-transition: color 100ms, background-color 100ms;
+      -o-transition:      color 100ms, background-color 100ms;
+    }
+
+
+    .selectedText
+    {
+      background-color: rgb(242,222,222);
+      color: rgb(167,69,68);
+    }
+
+    .unselectedText
+    {
+
+    }
+
+    .source-panel, .target-panel
+    {
+      cursor: default;
+    }
+  </style>
+
+  <script type="text/javascript" src="vendor/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="vendor/underscore-min.js"></script>
+  <script type="text/javascript" src="vendor/nprogress/nprogress.js"></script>
+  <script type="text/javascript" src="vendor/angular.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-xml.min.js"></script>
+  <script type="text/javascript">
+  //<!--
+  window.app = angular.module('app', ['xml'])
+    .config(function ($httpProvider) {
+      $httpProvider.interceptors.push('xmlHttpInterceptor');
+    })
+    .run(function ($rootScope, $location) {
+      $rootScope._ = window._;
+
+      if ($location.path().length === 0) {
+        $location.path('t1.xml');
+      }
+    });
+
+
+  //-->
+  </script>
+  <script type="text/javascript" src="controllers/TranslationCtrl.js"></script>
+  <script type="text/javascript" src="controllers/SelectorCtrl.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="javascript:void(0);">Translation View Demo</a>
+        </div>
+        <div class="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" ng-controller="SelectorCtrl">
+              <a href="javascript:void(0);" role="button" class="dropdown-toggle" data-toggle="dropdown">{{selectedTranslation}}<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li ng-hide="translaion == selectedTranslation" ng-repeat="translaion in translations" role="presentation"><a role="menuitem" tabindex="-1" ng-href="#{{translaion}}">{{translaion}}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary" ng-controller="TranslationCtrl">
+      <div class="panel-heading">Translation: {{translation.title}}</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6 col-md-4" style="overflow: scroll;">
+            <table class="table table-hover meta-info-table">
+              <tbody>
+                <tr><td>URL</td><td><a ng-href="{{translation.url}}">{{translation.url}}</a></td></tr>
+                <tr><td>Author</td><td>{{translation.author}}</td></tr>
+                <tr><td>Translator</td><td>{{translation.translator}}</td></tr>
+                <tr><td>Date</td><td>{{translation.date.toDateString()}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <div class="panel panel-success source-panel">
+              <div class="panel-heading">Source<span class="pull-right label label-success">{{translation.mainLanguage}}</span></div>
+              <div class="panel-body">
+                <span ng-mouseenter="highlightUnit($index);"  ng-mouseleave="unhighlightUnit($index);" ng-repeat="unit in translation.translationUnits" class="textTransition" ng-class="($index==selectedTranslationIndex) ? 'selectedText' : 'unselectedText'">{{unit.source.text}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div ng-repeat="language in translation.targetLanguages"  ng-class="($index==translation.targetLanguages.length - 1 && $index % 2 == 0) ? 'col-md-12' : 'col-sm-6 col-md-6'">
+            <div class="panel panel-info target-panel">
+              <div class="panel-heading">Target<span class="pull-right label label-info">{{language}}</span></div>
+              <div class="panel-body">
+                <span ng-repeat="target in translation.groupedTargets[language]" ng-mouseenter="highlightUnit(target.index);" ng-mouseleave="unhighlightUnit(target.index);" class="textTransition" ng-class="(target.index==selectedTranslationIndex) ? 'selectedText' : 'unselectedText'">{{target.text}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="vendor/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
